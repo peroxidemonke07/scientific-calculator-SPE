@@ -4,19 +4,17 @@ def square_root():
     """
     Compute the square root of a non-negative number.
     """
-    print("Computing sqrt(x),")
     x = float(input("Enter x: "))
 
     if x < 0:
         raise ValueError("Cannot compute square root of a negative number.")
     
-    print(f"result: {np.sqrt(x)}")
+    return np.sqrt(x)
 
 def factorial():
     """
     Compute the factorial of a non-negative integer.
     """
-    print("Computing x!,")
     x = float(input("Enter x: "))
 
     if x < 0:
@@ -30,31 +28,27 @@ def factorial():
     for i in range(1, x + 1):
         res *= i
 
-    print(f"result: {res}")
+    return res
 
 def natural_logarithm():
     """
     Compute the natural logarithm of a positive number.
     """
-    print("Computing ln(x),")
     x = float(input("Enter x: "))
 
     if x <= 0:
         raise ValueError("Natural logarithm is only defined for positive numbers.")
     
-    print(f"result: {np.log(x)}")
-
+    return np.log(x)
 
 def power():
     """
     Raise x to the power of b.
     """
-    print("Computing x^b,")
     x = float(input("Enter x: "))
     b = float(input("Enter b: "))
-   
-    print(f"result: {x**b}")
-   
+
+    return x ** b
 
 def show_calculator_options(options: dict):
     """Display available operations."""
@@ -62,8 +56,7 @@ def show_calculator_options(options: dict):
         print(f"To {operation[0]}, enter {option}")
 
 def print_line(n : int):
-    print("="*n)
-    
+    print("=" * n)
 
 options_dict = {
     0: ["EXIT", None],
@@ -89,8 +82,8 @@ if __name__ == '__main__':
         
         if selected_option in options_dict:
             try:
-                # Call the selected function and catch any exceptions
-                options_dict[selected_option][1]()
+                result = options_dict[selected_option][1]()
+                print(f"Result: {result}")
             except Exception as e:
                 print(f"Error: {e}")
                 continue
