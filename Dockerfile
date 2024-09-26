@@ -1,6 +1,5 @@
-FROM python:3.9-slim
+FROM python:3.12-slim
 WORKDIR /app
-COPY requirements.txt .
+COPY . /app
 RUN pip install -r requirements.txt
-COPY . .
-CMD ["python", "src/calculator.py"]
+CMD ["python3", "src/calculator.py"]
