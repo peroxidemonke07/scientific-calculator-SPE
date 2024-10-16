@@ -73,7 +73,7 @@ if __name__ == '__main__':
     while True:
         print_line(LINE_SIZE)
         show_calculator_options(options_dict)
-        selected_option = -1
+        selected_option = -2
         try:
             selected_option = int(input("\nSelect one of the above: "))
         except ValueError as e:
