@@ -73,7 +73,11 @@ if __name__ == '__main__':
     while True:
         print_line(LINE_SIZE)
         show_calculator_options(options_dict)
-        selected_option = int(input("\nSelect one of the above: "))
+        selected_option = -1
+        try:
+            selected_option = int(input("\nSelect one of the above: "))
+        except ValueError as e:
+            print(f"Invalid option!!!")
 
         if selected_option == 0:
             print("Exiting calculator.")
@@ -88,4 +92,4 @@ if __name__ == '__main__':
                 print(f"Error: {e}")
                 continue
         else:
-            print("Invalid option!!!")
+            print(f"Invalid option!!!")
